@@ -1,14 +1,18 @@
 #read CSV file
-WorldFert <- read.csv("FertilizerConsumption.csv", header=TRUE, sep=",")
+WorldFert <- read.csv("FertilizerConsumption_FilteredData.csv", header=TRUE, sep=",")
 head(WorldFert)
 
-#Fertilizer Consumption (FC), kilograms per hectare of arable land
+Countries <- c("Austria", "Germany", "France", "Poland", "SlovakRepublic", "Hungary", "Switzerland", "Czechia", "Netherlands", "Belgium")
+Years <- c("2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023")
+
+
+#Fertilizer Consumption (FC) kg/ha
 Austria_FC <- c(130.8759, 148.7207, 137.795, 141.0312, 133.15, 118.5088, 137.9713, 128.2593, 97.41836, 106.4162)
 Germany_FC <- c(217.6957, 202.2739, 197.2283, 178.1189, 166.4811, 174.0987, 163.242, 130.141, 116.8701, 128.5755)
 France_FC <- c(168.4267, 170.4009, 163.1391, 177.6248, 170.9708, 157.7226, 179.5401, 171.652, 130.6186, 131.3228)
 Poland_FC <- c(164.0007, 174.0975, 189.6909, 190.3915, 173.0766, 176.5084, 155.0673, 156.061, 160.6807, 155.6008)
-SlovakRepublic_FC <- C(116.4788, 112.9911, 125.7624, 121.6873, 129.3019, 129.1787, 129.812, 134.494, 118.9025, 106.3213)
-Hungary_FC <- C(112.7082, 114.1475, 138.173, 152.3787, 150.8589, 145.9856, 162.6167, 165.4918, 108.3258, 89.5253)
+SlovakRepublic_FC <- c(116.4788, 112.9911, 125.7624, 121.6873, 129.3019, 129.1787, 129.812, 134.494, 118.9025, 106.3213)
+Hungary_FC <- c(112.7082, 114.1475, 138.173, 152.3787, 150.8589, 145.9856, 162.6167, 165.4918, 108.3258, 89.5253)
 Switzerland_FC <- c(208.4009, 208.9314, 212.1093, 199.8875, 187.7938, 163.4276, 175.1294, 177.1865, 132.5975, 142.6968)
 Czechia_FC <- c(162.6573, 192.3137, 196.3834, 182.4207, 174.3607, 165.6915, 144.2165, 148.6243, 152.1399, 113.4345)
 Netherlands_FC <- c(247.8526, 266.8052, 291.6858, 290.5583, 274.2693, 273.8018, 276.614, 273.2552, 240.2659, 238.0198)
@@ -26,5 +30,17 @@ Czechia_WP <- c(6510.4, 6355.9, 6495.9, 5670.5, 5389.6, 5732.5, 6138.9, 6321.4, 
 Netherlands_WP <- c(9169.8, 9125.5, 7983.2, 9093.5, 8614.7, 9378.1, 8556.0, 8018.0, 9393.1, 8467.0)
 Belgium_WP <- c(9412.9, 10015.2, 6787.1, 8617.4, 8492.3, 9336.4, 8946.3, 7788.4, 9057.4, 8424.7)
 
+#Fertilizer Consumption (FC) Matrix
+FertilizerConsumption <- rbind(Austria_FC, Germany_FC, France_FC, Poland_FC, SlovakRepublic_FC, Hungary_FC, Switzerland_FC, Czechia_FC, Netherlands_FC, Belgium_FC)
+rm(Austria_FC, Germany_FC, France_FC, Poland_FC, SlovakRepublic_FC, Hungary_FC, Switzerland_FC, Czechia_FC, Netherlands_FC, Belgium_FC)
+rownames(FertilizerConsumption) <- Countries
+colnames(FertilizerConsumption) <- Years
+
+#Wheat Production (WP) matrix
+WheatProduction <- rbind(Austria_WP, Germany_WP, France_WP, Poland_WP, SlovakRepublic_WP, Hungary_WP, Switzerland_WP, Czechia_WP, Netherlands_WP, Belgium_WP)
+rm(Austria_WP, Germany_WP, France_WP, Poland_WP, SlovakRepublic_WP, Hungary_WP, Switzerland_WP, Czechia_WP, Netherlands_WP, Belgium_WP)
+rownames(WheatProduction) <-Countries
+colnames(WheatProduction) <- Years
 
 
+matplot(t(FertilizerConsumption), type="o", pch=16:25, col=c(1:8))
