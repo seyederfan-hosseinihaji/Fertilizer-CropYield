@@ -1,5 +1,5 @@
 #read CSV file
-WorldFert <- read.csv("FertilizerConsumption_FilteredData.csv", header=TRUE, sep=",")
+WorldFert <- read.csv(file.choose(), header=TRUE, sep=",")
 head(WorldFert)
 
 Countries <- c("Austria", "Germany", "France", "Poland", "SlovakRepublic", "Hungary", "Switzerland", "Czechia", "Netherlands", "Belgium")
@@ -42,5 +42,18 @@ rm(Austria_WP, Germany_WP, France_WP, Poland_WP, SlovakRepublic_WP, Hungary_WP, 
 rownames(WheatProduction) <-Countries
 colnames(WheatProduction) <- Years
 
+#Function for plotting different types of data     
+ShowMe <- function(DataName, Country=1:nrow(DataName)) {
+  matplot(t(DataName[Country,,drop=FALSE] ), type="b", pch=16:25, col=c(1:8))
+  legend("bottomleft", inset = 0.01, legend = Countries[Country], pch=16:25, col=c(1:8), horiz = F)
+}
 
-matplot(t(FertilizerConsumption), type="o", pch=16:25, col=c(1:8))
+#Plot the data by ShowMe() function
+ShowMe(FertilizerConsumption, 4)
+ShowMe(WheatProduction, "Germany")
+
+
+
+
+
+
