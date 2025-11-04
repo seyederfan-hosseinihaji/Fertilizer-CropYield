@@ -1,6 +1,6 @@
-# Correlation between fertilizer consumption and wheat production - R lang
+# Fertilizer Use and Wheat Production Correlation in Agriculture - R lang
 
-## Here, I aimed to plot and analyze public agricultural data — such as Fertilizer Consumption (from [World Bank Open Data](https://data.worldbank.org/indicator/AG.CON.FERT.ZS)) and Wheat Production (from [FAO](https://www.fao.org/faostat/en/#data/QCL)) — to get a better understanding of both agriculture and R programming.
+Here, I aimed to plot and analyze public agricultural data — such as Fertilizer Consumption (from [World Bank Open Data](https://data.worldbank.org/indicator/AG.CON.FERT.ZS)) and Wheat Production (from [FAO](https://www.fao.org/faostat/en/#data/QCL)) — to better understand fertilizer use trends and their impact on crop production in Europe.
 
 First of all, it’s better to get familiar with the file structure in this project:
 
@@ -8,4 +8,4 @@ First of all, it’s better to get familiar with the file structure in this proj
 
 -   **FilteredDataFiles** -\> Cleaned and organized versions of the OfficialDataFiles, specifically prepared for use in this project.
 
--   **Fertilizer-CropYield.R** -\> Main code file
+-   **Fertilizer-CropYield.R** -\> Main R script
