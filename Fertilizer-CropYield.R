@@ -1,12 +1,8 @@
-#read CSV file
-WorldFert <- read.csv(file.choose(), header=TRUE, sep=",")
-head(WorldFert)
-
 Countries <- c("Austria", "Germany", "France", "Poland", "SlovakRepublic", "Hungary", "Switzerland", "Czechia", "Netherlands", "Belgium")
 Years <- c("2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023")
 
 
-#Fertilizer Consumption (FC) kg/ha
+#Fertilizer Consumption (FC), 2014_2023, kg/ha
 Austria_FC <- c(130.8759, 148.7207, 137.795, 141.0312, 133.15, 118.5088, 137.9713, 128.2593, 97.41836, 106.4162)
 Germany_FC <- c(217.6957, 202.2739, 197.2283, 178.1189, 166.4811, 174.0987, 163.242, 130.141, 116.8701, 128.5755)
 France_FC <- c(168.4267, 170.4009, 163.1391, 177.6248, 170.9708, 157.7226, 179.5401, 171.652, 130.6186, 131.3228)
@@ -18,7 +14,7 @@ Czechia_FC <- c(162.6573, 192.3137, 196.3834, 182.4207, 174.3607, 165.6915, 144.
 Netherlands_FC <- c(247.8526, 266.8052, 291.6858, 290.5583, 274.2693, 273.8018, 276.614, 273.2552, 240.2659, 238.0198)
 Belgium_FC <- c(304.0306, 305.478, 275.0542, 269.7356, 266.7612, 265.8833, 257.6437, 252.754, 198.2734, 191.6623)
 
-#Wheat Production (WP) kg/ha
+#Wheat Production (WP), 2014_2023, kg/ha
 Austria_WP <- c(5921.7, 5696.2, 6253.4, 4871.2, 4645.3, 5737.2, 5923.4, 5529.9, 5795.2, 6187.7)
 Germany_WP <- c(8629.6, 8087.7, 7640.9, 7644.3, 6673.7, 7396.4, 7819.5, 7301.5, 7577.3, 7431.8)
 France_WP <- c(7353.0, 7800.8, 5289.6, 7253.8, 6768.0, 7742.8, 6677.6, 6928.4, 6996.7, 7201.6)
@@ -48,12 +44,15 @@ ShowMe <- function(DataName, Country=1:nrow(DataName)) {
   legend("bottomleft", inset = 0.01, legend = Countries[Country], pch=16:25, col=c(1:8), horiz = F)
 }
 
-#Plot the data by ShowMe() function
+
+####################### OUTPUTS ####################### 
+
+
+#Plot your desired data using the ShowMe() function:
 ShowMe(FertilizerConsumption, 4)
 ShowMe(WheatProduction, "Germany")
+ShowMe(WheatProduction)
 
-
-
-
-
-
+#Pearson correlation coefficient (PCC) for all countries
+Pcc <- cor(as.vector(FertilizerConsumption), as.vector(WheatProduction), method = "pearson")
+paste("The Pearson Correlation Coefficient (PCC) value for these two datasets(FC and WP):", round(Pcc, 2))
