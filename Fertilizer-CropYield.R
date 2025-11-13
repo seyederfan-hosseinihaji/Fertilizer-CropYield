@@ -56,3 +56,10 @@ ShowMe(WheatProduction)
 #Pearson correlation coefficient (PCC) for all countries
 Pcc <- cor(as.vector(FertilizerConsumption), as.vector(WheatProduction), method = "pearson")
 paste("The Pearson Correlation Coefficient (PCC) value for these two datasets(FC and WP):", round(Pcc, 2))
+
+#Average growth rate for all 10 EU countries from 2014 to 2023
+MeanFinalProduction <- mean(WheatProduction[,10]) #Mean of total production value in 2023 for all EU countries
+MeanInitialProduction <- mean(WheatProduction[,1]) #Mean of total production value in 2014 for all EU countries 
+GrowthRate <- (MeanFinalProduction - MeanInitialProduction) / MeanInitialProduction * 100
+paste("The value of average growth rate for all EU counties is:", round(GrowthRate, 2),"%")
+
