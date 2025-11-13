@@ -31,3 +31,5 @@ At the end of the Main Code File (Fertilizer-CropYield.R), you will find an **OU
     ![wheatProduction](images/wheatProduction-01.jpg)
 
 -   The code also calculates the **Pearson Correlation Coefficient (PCC)**, which represents the degree of correlation between Fertilizer Consumption and Wheat Production. Based on the result value of **0.7**, we can reasonably conclude that there is a positive correlation between these datasets. However, it is important to be aware that without considering other environmental factors, such as soil, climate, and farming techniques, the data cannot be fully analyzed.
+
+![PCC](images/PCC.png)
