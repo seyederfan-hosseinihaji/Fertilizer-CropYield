@@ -33,3 +33,9 @@ At the end of the Main Code File (Fertilizer-CropYield.R), you will find an **OU
 -   The code also calculates the **Pearson Correlation Coefficient (PCC)**, which represents the degree of correlation between Fertilizer Consumption and Wheat Production. Based on the result value of **0.7**, we can reasonably conclude that there is a positive correlation between these datasets. However, it is important to be aware that without considering other environmental factors, such as soil, climate, and farming techniques, the data cannot be fully analyzed.
 
 ![PCC](images/PCC.png)
+
+-   I also determined the **AGR (Average Growth Rate)** for **Wheat Production (WP)** and **Fertilizer Consumption (FC)** from 2014 to 2023 for 10 EU countries as a whole. Even though the AGR for WP slightly decreased by -3.18% over 10 years, considering the -23.43% AGR of FC, I believe this can be regarded as a significant achievement. As you may know, excessive fertilizer use can have several negative effects. For example, surface runoff can carry excess nutrients into rivers and lakes, causing **eutrophication**. In addition, overuse of fertilizers can alter soil pH and reduce organic matter.
+
+    As a result, this was probably a good strategy implemented by EU countries, aiming to reduce fertilizer consumption to promote a more sustainable environment.
+
+![](images/AGR.png)
