@@ -68,3 +68,10 @@ MeanFinalProduction <- mean(FertilizerConsumption[,10]) #Mean of total consumpti
 MeanInitialProduction <- mean(FertilizerConsumption[,1]) #Mean of total consumption value in 2014 for all EU countries 
 GrowthRate_FC <- (MeanFinalProduction - MeanInitialProduction) / MeanInitialProduction * 100
 paste("The average growth rate of Fertilizer Consumption for 10 EU countries is", round(GrowthRate_FC, 2),"%")
+
+#A matrix showing the amount of wheat produced per kilogram of fertilizer applied
+Efficiency <- WheatProduction / FertilizerConsumption
+Mean_efficiency <- mean(Efficiency) #The value is 38.63967
+#Show countries whose efficiency exceeds the overall mean efficiency
+Best_countries <- Efficiency > Mean_efficiency
+Best_countries
