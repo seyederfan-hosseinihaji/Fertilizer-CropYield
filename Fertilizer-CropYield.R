@@ -58,26 +58,25 @@ Pcc <- cor(as.vector(FertilizerConsumption), as.vector(WheatProduction), method 
 paste("The Pearson Correlation Coefficient (PCC) value for these two datasets(FC and WP):", round(Pcc, 2))
 
 #Average growth rate of Wheat Production (WP) for 10 EU countries from 2014 to 2023
-MeanFinalProduction <- mean(WheatProduction[,10]) #Mean of total production value in 2023 for all EU countries
-MeanInitialProduction <- mean(WheatProduction[,1]) #Mean of total production value in 2014 for all EU countries 
+MeanFinalProduction <- mean(WheatProduction[,10]) #Mean of total production value in 2023 for EU countries
+MeanInitialProduction <- mean(WheatProduction[,1]) #Mean of total production value in 2014 for EU countries 
 GrowthRate_WP <- (MeanFinalProduction - MeanInitialProduction) / MeanInitialProduction * 100
 paste("The average growth rate of Wheat Production for 10 EU countries is", round(GrowthRate_WP, 2),"%")
 
 #Average growth rate of Fertilizer Consumption (FC) for 10 EU countries from 2014 to 2023
-MeanFinalProduction <- mean(FertilizerConsumption[,10]) #Mean of total consumption value in 2023 for all EU countries
-MeanInitialProduction <- mean(FertilizerConsumption[,1]) #Mean of total consumption value in 2014 for all EU countries 
+MeanFinalProduction <- mean(FertilizerConsumption[,10]) #Mean of total consumption value in 2023 for EU countries
+MeanInitialProduction <- mean(FertilizerConsumption[,1]) #Mean of total consumption value in 2014 for EU countries 
 GrowthRate_FC <- (MeanFinalProduction - MeanInitialProduction) / MeanInitialProduction * 100
 paste("The average growth rate of Fertilizer Consumption for 10 EU countries is", round(GrowthRate_FC, 2),"%")
 
-#A matrix showing the amount of wheat produced per kilogram of fertilizer applied
+#A matrix showing the amount of wheat produced per 1 kilogram of fertilizer applied
 Efficiency <- WheatProduction / FertilizerConsumption
 Mean_efficiency <- mean(Efficiency)
 Best_countries <- Efficiency > Mean_efficiency #Countries with efficiency above the overall mean per each year
 Best_countries
 
-#Top 3 countries which their production for each year from 2014 to 2023 was higher than mean efficiency
-#For example, if you check the Best_countries matrix, you relbaize that Germany has the
-sort(rowSums(Best_countries), decreasing = TRUE) [1:4] 
+#The top three countries whose production for each year from 2014 to 2023 was higher than the mean efficiency.
+sort(rowSums(Best_countries), decreasing = TRUE) [1:3] 
 
 
 
