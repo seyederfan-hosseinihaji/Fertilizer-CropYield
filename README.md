@@ -39,9 +39,17 @@ At the end of the Main Code File (Fertilizer-CropYield.R), you will find an **OU
     As a result, this was probably a good strategy implemented by EU countries, aiming to reduce fertilizer consumption to promote a more sustainable environment.
 
     ![](images/AGR.png)
--   You can see that I ranked the top three countries based on the number of years in which their production exceeded the mean from 2014 to 2023.
-    Germany takes first place with a score of 10, meaning its efficiency was above the overall mean in every year of the 10-year period (2014–2023).
+
+-   You can see that I ranked the top three countries based on the number of years in which their production exceeded the mean from 2014 to 2023. Germany takes first place with a score of 10, meaning its efficiency was above the overall mean in every year of the 10-year period (2014–2023).
 
     ![](images/Effi..png)
 
     ![](images/Effi.2.png)
+
+## Installation
+
+This project does not require any additional packages to be installed.
+
+To use this repository, simply download or clone it to your local machine:
+
+`git clone https://github.com/seyederfan-hosseinihaji/Fertilizer-CropYield.git`

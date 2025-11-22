@@ -71,7 +71,14 @@ paste("The average growth rate of Fertilizer Consumption for 10 EU countries is"
 
 #A matrix showing the amount of wheat produced per kilogram of fertilizer applied
 Efficiency <- WheatProduction / FertilizerConsumption
-Mean_efficiency <- mean(Efficiency) #The value is 38.63967
-#Show countries whose efficiency exceeds the overall mean efficiency
-Best_countries <- Efficiency > Mean_efficiency
+Mean_efficiency <- mean(Efficiency)
+Best_countries <- Efficiency > Mean_efficiency #Countries with efficiency above the overall mean per each year
 Best_countries
+
+#Top 3 countries which their production for each year from 2014 to 2023 was higher than mean efficiency
+#For example, if you check the Best_countries matrix, you relbaize that Germany has the
+sort(rowSums(Best_countries), decreasing = TRUE) [1:4] 
+
+
+
+
