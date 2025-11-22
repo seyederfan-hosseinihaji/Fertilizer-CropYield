@@ -10,7 +10,7 @@ First of all, it’s better to get familiar with the file structure in this proj
 
 -   **Fertilizer-CropYield.R** -\> Main Code File
 
-### Outputs:
+## Outputs:
 
 At the end of the Main Code File (Fertilizer-CropYield.R), you will find an **OUTPUTS** section that provides the following results:
 
